@@ -22,6 +22,7 @@ Suppliers:'Suppliers',
          //Arrival
 'Express Purchase':'Express Purchase',
 'Entry Certificate':'Entry Certificate',
+'EDICertificate':'EDICertificate',
 'Refunds':'Refunds',
 'Supplier Order':'Supplier Order',
 'EdiHome':'EDICertificate',
