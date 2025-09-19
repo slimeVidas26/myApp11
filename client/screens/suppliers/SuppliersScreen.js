@@ -1,11 +1,12 @@
 import React , {useState , useEffect} from 'react'
-import { View, Text , FlatList,StyleSheet ,ActivityIndicator , TextInput} from 'react-native'
+import { TouchableOpacity,View, Text , FlatList,StyleSheet ,ActivityIndicator , TextInput} from 'react-native'
 
 import * as Localization from 'expo-localization';
 import { I18n } from 'i18n-js';
 import { translation } from "../../i18n/supportedLanguages";
 import { useQuery } from "@apollo/client";
 import { SUPPLIERS_QUERY } from "../../gql/Query";
+import { LoginScreen} from "../LoginScreen"
 // import AddSupplier from '../../screens/ediDcreens/AddSupplierScreen';
 
 // Set the key-value pairs for the different languages you want to support.
@@ -31,11 +32,18 @@ const i18n = new I18n(translation);
     }, [data]);
 
 
-    const SupplierItem = ({ name, number }) => (
+    const SupplierItem = ({ name, number , products }) => (
+       <TouchableOpacity
+        onPress={()=>navigation.navigate('SupplierDetails', {
+            number: number,
+            name: name,
+          })}
+      >
       <View style={styles.item}>
         <Text style={styles.name}>{name}</Text>
         <Text style={styles.number}>{number}</Text>
       </View>
+      </TouchableOpacity>
     );
   
     const handleSearch = (text) => {
@@ -55,6 +63,7 @@ const i18n = new I18n(translation);
     if (error) return <Text>Error: {error.message}</Text>;
     
       return (
+        
         <View style={styles.container}>
        <TextInput
           style={styles.searchBar}
@@ -78,12 +87,13 @@ const i18n = new I18n(translation);
   const styles = StyleSheet.create({
   
     searchBar: {
-      height: 40,
+      height: 60,
       borderColor: 'gray',
       borderWidth: 1,
-      borderRadius: 5,
+      borderRadius: 15,
       paddingLeft: 10,
       margin: 10,
+      fontSize:20
     },
     
     
@@ -103,18 +113,20 @@ const i18n = new I18n(translation);
     },
     item: {
       //width: '100%',
-      //backgroundColor:'red',
+      backgroundColor:'#d3d3d3',
       padding: 20,
       borderBottomWidth: 1,
       borderBottomColor: '#ccc',
-      alignItems:"center"
+      borderRadius:15,
+      alignItems:"center",
+      marginBottom:10
     },
     name: {
-      fontSize: 18,
+      fontSize: 25,
       fontWeight: 'bold',
     },
     number: {
-      fontSize: 16,
+      fontSize: 20,
       color: '#555',
     },
   });

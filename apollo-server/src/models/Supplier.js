@@ -2,11 +2,11 @@ import mongoose from 'mongoose'
 // import { Product } from './Product.js';
 const { Schema } = mongoose;
 
-const supplierDetailsSchema = new Schema({
-  address: { type: String, required: true },
-  phone: { type: String, required: true },
-  email: { type: String, required: true },
-});
+// const supplierDetailsSchema = new Schema({
+//   //address: { type: String, required: false },
+//   phone: { type: String, required: false },
+//   //email: { type: String, required: false },
+// });
 
 // const productSchema = new Schema({
 //   name: { type: String, required: false },
@@ -22,13 +22,13 @@ const supplierDetailsSchema = new Schema({
 const supplierSchema = new Schema({
   name: { type: String, required: true },
   number: { type: Number, required: true },
-  supplierDetails: [supplierDetailsSchema],
-  // products: [productSchema]
-  products: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Product', required: false }],
-  orders: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Order',
-  }],
+  // supplierDetails: [supplierDetailsSchema],
+  // // products: [productSchema]
+  // products: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Product', required: false }],
+  // orders: [{
+  //   type: mongoose.Schema.Types.ObjectId,
+  //   ref: 'Order',
+  // }],
 });
 
 

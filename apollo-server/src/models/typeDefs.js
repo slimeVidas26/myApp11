@@ -43,8 +43,8 @@ export const typeDefs = gql`
     addSupplier(
       name: String!,
       number: Int!,
-      supplierDetails: [SupplierDetailsInput]!,
-      products: [ProductInput]
+      # supplierDetails: [SupplierDetailsInput]!,
+      # products: [ProductInput]
     ): Supplier
 
     addOrder(

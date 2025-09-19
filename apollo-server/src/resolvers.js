@@ -301,7 +301,42 @@ export const resolvers = {
     },
 
 
-    addSupplier: async (_, { name, number, supplierDetails, products  , orders}) => {
+    // addSupplier: async (_, { name, number, supplierDetails, products  , orders}) => {
+    //   try {
+    //     // Check if supplier with the given  name or number already exists
+    //     const existingSupplier = await Supplier.findOne({
+    //       number
+    //       // $or: [
+    //       //   { name : name },
+    //       //   { number: number }
+    //       // ]
+    //     })
+
+    //     if (!existingSupplier) {
+    //       const newSupplier = new Supplier({
+    //         name,
+    //         number,
+    //         supplierDetails,
+    //         products,
+    //         orders
+    //       });
+    
+    //       await newSupplier.save();
+    //       console.log('Supplier added successfully:', newSupplier);
+    
+    //       return newSupplier;
+
+    //     }
+    //     else {
+    //       console.log(`supplier ${existingSupplier.name} with number ${existingSupplier.number}  already exists`)
+    //     }
+    //   } catch (error) {
+    //     console.error('Error adding supplier:', error);
+    //     throw error;
+    //   }
+    // },
+
+     addSupplier: async (_, { name, number}) => {
       try {
         // Check if supplier with the given  name or number already exists
         const existingSupplier = await Supplier.findOne({
@@ -316,9 +351,9 @@ export const resolvers = {
           const newSupplier = new Supplier({
             name,
             number,
-            supplierDetails,
-            products,
-            orders
+            // supplierDetails,
+            // products,
+            // orders
           });
     
           await newSupplier.save();

@@ -1,6 +1,7 @@
 import { createStackNavigator } from '@react-navigation/stack'
 import { SuppliersScreen } from '../../screens/suppliers/SuppliersScreen';
 import { AddSupplierScreen } from '../../screens/suppliers/AddSupplierScreen';
+import { SupplierDetailsScreen } from '../../screens/suppliers/SupplierDetailsScreen';
 
 const Stack = createStackNavigator();  
 
@@ -18,6 +19,8 @@ const SuppliersStackNavigator = () => {
     }}>
       <Stack.Screen name="Suppliers" component={SuppliersScreen} />
       <Stack.Screen name="AddSupplier" component={AddSupplierScreen} />
+      <Stack.Screen name="SupplierDetails" component={SupplierDetailsScreen} />
+
 
     </Stack.Navigator>
   )

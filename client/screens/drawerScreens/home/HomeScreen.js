@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'orange',
   },
   circleText: {
-    fontSize: 15,
+    fontSize: 20,
     fontWeight: "bold",
   },
   image: {
@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   departmentText: {
-    fontSize: 15,
+    fontSize: 18,
     fontWeight: "bold",
   },
 });

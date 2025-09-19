@@ -94,7 +94,6 @@ query SupplierQuery {
     suppliers {
        id
        name
-       
        number
     }
 }`
@@ -212,13 +211,20 @@ mutation UpdateOrderStatus($orderId:ID!, $openOrder:Boolean!) {
 
 
 
+// export  const ADD_SUPPLIER = gql`
+// mutation AddSupplier($name: String!, $number: Int!, $supplierDetails: [SupplierDetailsInput]) {
+//   addSupplier(name: $name, number: $number, supplierDetails: $supplierDetails) {
+//     name
+//     number
+//   }
+//   }`
 
-export  const ADD_SUPPLIER = gql`
+  export  const ADD_SUPPLIER = gql`
 mutation AddSupplier($name: String!, $number: Int!) {
-    addSupplier(name: $name, number: $number) {
-      name
-      number
-    }
+  addSupplier(name: $name, number: $number) {
+    name
+    number
+  }
   }`
 
 
